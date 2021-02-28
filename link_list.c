@@ -104,8 +104,8 @@ int main(int argc, char **argv) {
     list_display(list);
 
     if (!list_is_ordered(list))
-        return 0;
+        return EXIT_FAILURE;
 
     list_free(&list);
-    return 1;
+    return EXIT_SUCCESS;
 }
