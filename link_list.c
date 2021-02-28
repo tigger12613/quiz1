@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #define bool int
 #define true 1
 #define false 0
@@ -96,6 +97,7 @@ int main(int argc, char **argv) {
     size_t count = 20;
 
     node_t *list = NULL;
+    srand(time(NULL));
     while (count--)
         list = list_make_node_t(list, random() % 1024);
 
