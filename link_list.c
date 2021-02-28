@@ -51,7 +51,6 @@ void quicksort_iterative(node_t **list)
     node_t *sorted;
     sorted = NULL;
     stack[0] = *list;
-    //printf("s1\n");
     while(i>=0 && i<MAX_LEVELS){
         if(!stack[i]){
             i--;
@@ -61,10 +60,6 @@ void quicksort_iterative(node_t **list)
             stack[i]->next = sorted;
             sorted = stack[i];
             i--;
-            /*
-            printf("sorted ");
-            list_display(sorted);
-            */
             continue;
         }
         node_t *pivot = stack[i];
@@ -77,14 +72,6 @@ void quicksort_iterative(node_t **list)
             p = p->next;
             list_add_node_t(n->value > value ? &right : &left, n);
         }
-        /*
-        printf("l ");
-        list_display(left);
-        printf("p ");
-        list_display(pivot);
-        printf("r ");
-        list_display(right);
-        */
         stack[i] = left;
         stack[i+1] = pivot;
         stack[i+2] = right;
